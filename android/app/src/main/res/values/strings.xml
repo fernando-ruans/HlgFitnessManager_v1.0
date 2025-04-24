@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">HLG Fitness</string>
+    <string name="title_activity_main">HLG Fitness</string>
+    <string name="package_name">com.hlgfitness.app</string>
+    <string name="custom_url_scheme">com.hlgfitness.app</string>
+</resources>

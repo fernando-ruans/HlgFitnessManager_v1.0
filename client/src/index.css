@@ -1,0 +1,165 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 210 20% 12%; /* Cor escura para o fundo da aplicação */
+  --foreground: 0 0% 100%; /* Alterado para branco */
+  --muted: 210 40% 20%;
+  --muted-foreground: 0 0% 90%; /* Mais claro, quase branco */
+  --popover: 210 20% 12%;
+  --popover-foreground: 0 0% 100%; /* Alterado para branco */
+  --card: 210 20% 16%; /* Cartões um pouco mais claros que o fundo */
+  --card-foreground: 0 0% 100%; /* Alterado para branco */
+  --border: 215 28% 25%;
+  --input: 215 28% 25%;
+  
+  /* HLG Fitness brand colors */
+  --primary: 229 11% 22%;
+  --primary-light: 223 19% 75%;
+  --primary-foreground: 0 0% 100%; /* Alterado para branco */
+  
+  --secondary: 351 100% 63%;
+  --secondary-light: 351 100% 70%;
+  --secondary-foreground: 0 0% 100%; /* Alterado para branco */
+  
+  --accent: 215 28% 25%;
+  --accent-foreground: 0 0% 100%; /* Alterado para branco */
+  
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 0 0% 100%; /* Alterado para branco */
+  
+  --ring: 215 20.2% 65.1%;
+  --radius: 0.5rem;
+  
+  --success: 142 71% 45%;
+  --warning: 36 77% 49%;
+  --danger: 6 78% 57%;
+  
+  --chart-1: var(--primary);
+  --chart-2: var(--secondary);
+  --chart-3: var(--success);
+  --chart-4: var(--warning);
+  --chart-5: var(--danger);
+  
+  /* Sidebar colors */
+  --sidebar-background: 210 20% 16%; /* Fundo do sidebar escuro */
+  --sidebar-foreground: 0 0% 100%; /* Alterado para branco */
+  --sidebar-primary: var(--secondary);
+  --sidebar-primary-foreground: 0 0% 100%; /* Alterado para branco */
+  --sidebar-accent: 215 28% 25%;
+  --sidebar-accent-foreground: 0 0% 100%; /* Alterado para branco */
+  --sidebar-border: 215 28% 25%;
+  --sidebar-ring: var(--primary-light);
+}
+
+.dark {
+  --background: 224 71% 4%;
+  --foreground: 213 31% 91%;
+  --muted: 223 47% 11%;
+  --muted-foreground: 215.4 16.3% 56.9%;
+  --popover: 224 71% 4%;
+  --popover-foreground: 215 20.2% 65.1%;
+  --card: 224 71% 4%;
+  --card-foreground: 213 31% 91%;
+  --border: 216 34% 17%;
+  --input: 216 34% 17%;
+  
+  /* HLG Fitness brand colors (dark mode) */
+  --primary: 229 11% 22%;
+  --primary-light: 223 19% 75%;
+  --primary-foreground: 210 40% 98%;
+  
+  --secondary: 351 100% 63%;
+  --secondary-light: 351 100% 70%;
+  --secondary-foreground: 210 40% 98%;
+  
+  --accent: 216 34% 17%;
+  --accent-foreground: 210 40% 98%;
+  
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 210 40% 98%;
+  
+  --ring: 216 34% 17%;
+  --radius: 0.5rem;
+  
+  --success: 142 71% 45%;
+  --warning: 36 77% 49%;
+  --danger: 6 78% 57%;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-secondary text-white hover:bg-secondary-light transition-colors duration-200 font-medium;
+  }
+  
+  .btn-secondary {
+    @apply bg-slate-100 text-primary hover:bg-neutral border border-neutral-dark transition-colors duration-200 font-medium;
+  }
+  
+  .card-dashboard {
+    @apply bg-card overflow-hidden shadow rounded-lg;
+  }
+  
+  .card-dashboard-stat {
+    @apply p-5;
+  }
+  
+  .card-dashboard-footer {
+    @apply bg-muted px-5 py-2;
+  }
+  
+  .badge-success {
+    @apply px-2 py-1 text-xs font-medium rounded-full bg-success text-white;
+  }
+  
+  .badge-warning {
+    @apply px-2 py-1 text-xs font-medium rounded-full bg-warning text-white;
+  }
+  
+  .badge-danger {
+    @apply px-2 py-1 text-xs font-medium rounded-full bg-danger text-white;
+  }
+  
+  .stat-icon {
+    @apply flex-shrink-0 rounded-full p-3 text-white;
+  }
+  
+  .stat-icon-primary {
+    @apply stat-icon bg-primary;
+  }
+  
+  .stat-icon-secondary {
+    @apply stat-icon bg-secondary-light;
+  }
+  
+  .stat-icon-warning {
+    @apply stat-icon bg-warning;
+  }
+  
+  .stat-icon-danger {
+    @apply stat-icon bg-danger;
+  }
+  
+  .nav-link {
+    @apply flex items-center px-4 py-3 font-medium rounded-md transition-colors duration-200;
+  }
+  
+  .nav-link-active {
+    @apply text-white bg-muted;
+  }
+  
+  .nav-link-inactive {
+    @apply text-white hover:bg-muted hover:text-secondary;
+  }
+}

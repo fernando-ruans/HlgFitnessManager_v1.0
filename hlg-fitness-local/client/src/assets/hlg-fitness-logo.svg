@@ -1,0 +1,7 @@
+<svg id="hlg-logo-svg" width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="100" cy="100" r="90" stroke="#FF4365" stroke-width="4" />
+  <circle cx="100" cy="100" r="70" stroke="#FF4365" stroke-width="2" stroke-dasharray="4 4" />
+  <path d="M30 70H45V95H75V70H90V130H75V110H45V130H30V70Z" fill="#2D3142" />
+  <path d="M100 70H115V130H100V70Z" fill="#2D3142" />
+  <path d="M130 70H178L170 85H145V90H165V105H145V115H170L178 130H130V70Z" fill="#2D3142" />
+</svg>
