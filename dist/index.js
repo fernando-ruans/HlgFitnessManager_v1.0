@@ -135,7 +135,7 @@ import createMemoryStore from "memorystore";
 import { Pool } from "pg";
 import { drizzle } from "drizzle-orm/node-postgres";
 var isReplit = process.env.REPL_ID || process.env.REPL_SLUG;
-var connectionString = isReplit ? process.env.DATABASE_URL : "postgresql://admin:admin@localhost:5432/hlg_fitness";
+var connectionString = isReplit ? process.env.DATABASE_URL : "postgresql://postgres:admin@localhost:5432/hlg_fitness";
 console.log(`Ambiente detectado: ${isReplit ? "Replit (produ\xE7\xE3o)" : "Local (desenvolvimento)"}`);
 console.log("Testando conex\xE3o com o banco de dados PostgreSQL...");
 var pool = new Pool({

@@ -8,7 +8,7 @@ import * as schema from "@shared/schema";
 const isReplit = process.env.REPL_ID || process.env.REPL_SLUG;
 const connectionString = isReplit
   ? process.env.DATABASE_URL
-  : 'postgresql://admin:admin@localhost:5432/hlg_fitness';
+  : 'postgresql://postgres:admin@localhost:5432/hlg_fitness';
 
 console.log(`Ambiente detectado: ${isReplit ? 'Replit (produção)' : 'Local (desenvolvimento)'}`);
 console.log("Testando conexão com o banco de dados PostgreSQL...");
