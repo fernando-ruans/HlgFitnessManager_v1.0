@@ -3,7 +3,7 @@ import { CapacitorConfig } from '@capacitor/cli';
 const config: CapacitorConfig = {
   appId: 'com.hlgfitness.app',
   appName: 'HLG Fitness',
-  webDir: 'client/dist',
+  webDir: 'dist/public',
   bundledWebRuntime: false,
   server: {
  androidScheme: "http",
