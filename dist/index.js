@@ -5,6 +5,7 @@ var __export = (target, all) => {
 };
 
 // server/index.ts
+import dotenv from "dotenv";
 import express2 from "express";
 
 // server/routes.ts
@@ -135,8 +136,9 @@ import createMemoryStore from "memorystore";
 import { Pool } from "pg";
 import { drizzle } from "drizzle-orm/node-postgres";
 var isReplit = process.env.REPL_ID || process.env.REPL_SLUG;
-var connectionString = isReplit ? process.env.DATABASE_URL : "postgresql://postgres:admin@localhost:5432/hlg_fitness";
+var connectionString = process.env.DATABASE_URL || "postgresql://postgres:admin@localhost:5432/hlg_fitness";
 console.log(`Ambiente detectado: ${isReplit ? "Replit (produ\xE7\xE3o)" : "Local (desenvolvimento)"}`);
+console.log(`String de conex\xE3o utilizada: ${connectionString?.replace(/:[^:]*@/, ":***@")}`);
 console.log("Testando conex\xE3o com o banco de dados PostgreSQL...");
 var pool = new Pool({
   connectionString,
@@ -1166,6 +1168,8 @@ function serveStatic(app2) {
 
 // server/index.ts
 import path5 from "path";
+dotenv.config();
+console.log("Banco de dados configurado em .env:", process.env.DATABASE_URL);
 var app = express2();
 app.use(express2.json());
 app.use(express2.urlencoded({ extended: false }));

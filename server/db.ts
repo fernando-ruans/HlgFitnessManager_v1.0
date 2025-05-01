@@ -3,14 +3,12 @@ import { drizzle } from 'drizzle-orm/node-postgres';
 import * as schema from "@shared/schema";
 
 // Detecção automática do ambiente para usar a string de conexão apropriada
-// Em ambiente de desenvolvimento local, usa a string fixa
-// Em produção (Replit), usa a variável de ambiente DATABASE_URL
+// Prioriza a variável de ambiente DATABASE_URL do .env
 const isReplit = process.env.REPL_ID || process.env.REPL_SLUG;
-const connectionString = isReplit
-  ? process.env.DATABASE_URL
-  : 'postgresql://postgres:admin@localhost:5432/hlg_fitness';
+const connectionString = process.env.DATABASE_URL || 'postgresql://postgres:admin@localhost:5432/hlg_fitness';
 
 console.log(`Ambiente detectado: ${isReplit ? 'Replit (produção)' : 'Local (desenvolvimento)'}`);
+console.log(`String de conexão utilizada: ${connectionString?.replace(/:[^:]*@/, ':***@')}`);
 console.log("Testando conexão com o banco de dados PostgreSQL...");
 
 // Criar pool de conexão

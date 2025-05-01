@@ -1,3 +1,8 @@
+// Carregar variáveis de ambiente do .env PRIMEIRO
+import dotenv from 'dotenv';
+dotenv.config();
+console.log('Banco de dados configurado em .env:', process.env.DATABASE_URL);
+
 import express, { type Request, Response, NextFunction } from "express";
 import { registerRoutes } from "./routes";
 import { setupVite, serveStatic, log } from "./vite";
